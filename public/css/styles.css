@@ -1,0 +1,17 @@
+.pagination-controls {
+    margin-top: 10px;
+}
+
+.page-btn {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background-color: #0056b3;
+    font-weight: bold;
+}

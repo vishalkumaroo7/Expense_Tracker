@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .expense-card {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .expense-item {
+            font-size: 16px;
+            background-color: #f8f9fa;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .leaderboard-item {
+            font-size: 16px;
+            background-color: #e9ecef;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .leaderboard-item span {
+            font-weight: bold;
+        }
+        #expense-list table {
+            font-size: 14px;
+        }
+        #expense-list th, #expense-list td {
+            text-align: center;
+        }
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-4">
+        <header class="d-flex justify-content-between align-items-center bg-primary text-white p-3 rounded">
+            <h1 class="h3">Expense Tracker</h1>
+            <button id="upgrade-btn" class="btn btn-warning" style="display: block;">Upgrade to Premium</button>
+        </header>
+
+        <div class="card mt-4 p-4 expense-card">
+            <h2 class="text-center">Track Your Expenses</h2>
+
+            <form id="expense-form" class="mt-3">
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Amount:</label>
+                    <input type="number" id="amount" name="amount" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category:</label>
+                    <select id="category" name="category" class="form-select" required>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Add Expense</button>
+            </form>
+        </div>
+
+        <div class="mt-4">
+            <h3>Total Amount: <span id="total-expense" class="fw-bold">$0</span></h3>
+        </div>
+
+        <div class="mt-4">
+            <h3>Expenses</h3>
+            <div id="expense-list" class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Expense list will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-container" id="pagination-controls">
+                <!-- Pagination buttons will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="premium-features" class="mt-4" style="display: none;">
+            <div class="card p-4">
+                <h3>Leaderboard</h3>
+                <ul id="leaderboard" class="list-group mb-3">
+                    <!-- Leaderboard list will be dynamically added here -->
+                </ul>
+                <button id="download-btn" class="btn btn-primary w-100">Download Expenses</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="/js/app.js"></script>
+
+</body>
+</html>
